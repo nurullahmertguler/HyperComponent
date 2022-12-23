@@ -274,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 125054426}
   targetFrame: 600
-  qualityLossRate: 10
+  qualityLossRate: 6.5158386
 --- !u!1 &366995723
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &366995725
 MonoBehaviour:
   m_ObjectHideFlags: 0

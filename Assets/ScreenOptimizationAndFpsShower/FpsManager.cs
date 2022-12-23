@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Sirenix.OdinInspector;
 
 public class FpsManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class FpsManager : MonoBehaviour
 
     [Space(10)]
     [Header("screen quality loss       Min:%0      Max:%20")]
+    [ProgressBar(0,20)]
     public float qualityLossRate=10;
 
     float deltaTime = 0.0f;
