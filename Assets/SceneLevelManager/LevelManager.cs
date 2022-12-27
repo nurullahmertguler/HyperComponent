@@ -6,7 +6,7 @@ public class LevelManager : MonoBehaviour
 {
 
     public static Action<bool> LoadNextLevelEvent;
-    // Kullanýcýnýn oynadýðý level indexini tutan deðiþken
+    // Variable that holds the user's level index
     private int currentLevel;
 
     private void Awake()
@@ -30,11 +30,11 @@ public class LevelManager : MonoBehaviour
 
 
 
-    // Bir sonraki level sahnesine geçme fonksiyonu
+    // Function to move to the next level scene
     public void LoadNextLevel(bool win)
     {
 
-        // Kullanýcýnýn oynadýðý level indexini arttýrýyoruz
+        // We increase the user's playing level index
         currentLevel = PlayerPrefs.GetInt("activeLevel",0);
 
         if(win)
@@ -43,12 +43,12 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetInt("activeLevel", currentLevel);
 
 
-        // Eðer kullanýcýnýn oynadýðý level indexi, toplam level sayýsýndan küçükse, bir sonraki level sahnesine geçiriyoruz
+        // If the level index played by the user is less than the total number of levels, we pass it to the next level scene
         if (currentLevel < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(currentLevel);
         }
-        // Eðer kullanýcýnýn oynadýðý level indexi, toplam level sayýsýndan büyükse, en son level sahnesini açýyoruz
+        // If the level index played by the user is greater than the total number of levels, we open the last level scene
         else
         {
             SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
