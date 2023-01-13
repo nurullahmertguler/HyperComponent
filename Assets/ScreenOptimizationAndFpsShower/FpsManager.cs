@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Sirenix.OdinInspector;
+
 
 public class FpsManager : MonoBehaviour
 {
@@ -13,15 +13,19 @@ public class FpsManager : MonoBehaviour
     public int targetFrame;
 
     [Space(10)]
-    [Header("screen quality loss       Min:%0      Max:%20")]
-    [ProgressBar(0,20)]
+    [Header("screen quality loss       Min:%0      Max:%15")]
     public float qualityLossRate=10;
 
     float deltaTime = 0.0f;
 
     private void Start()
     {
+        // limited so that the game quality does not deteriorate too much
+        qualityLossRate = Mathf.Clamp(qualityLossRate,0,15);
+
+        // target fps value assignment of the game
         Application.targetFrameRate = targetFrame;
+
 
         float sc = 1 + (qualityLossRate / 100);
         sc = Mathf.Clamp(sc ,1 ,1.2f);
