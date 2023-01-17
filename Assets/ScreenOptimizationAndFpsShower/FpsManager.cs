@@ -27,12 +27,14 @@ public class FpsManager : MonoBehaviour
         Application.targetFrameRate = targetFrame;
 
 
+        // screen resolution is lowered
         float sc = 1 + (qualityLossRate / 100);
         sc = Mathf.Clamp(sc ,1 ,1.2f);
         Screen.SetResolution((int)(Screen.width / sc), (int)(Screen.height / sc) , false);
     }
     void Update()
     {
+        // update fps
         deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
         float msec = deltaTime * 1000.0f;
         float fps = 1.0f / deltaTime;
