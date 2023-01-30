@@ -22,6 +22,7 @@ public class PieceMover : MonoBehaviour
 
     void ObjControl()
     {
+        /*
         RaycastHit hit;
         float rayDist = 50;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -38,6 +39,7 @@ public class PieceMover : MonoBehaviour
         {
             activeObj = null;
         }
+        */
     }
 
     void MoveTheObj()
