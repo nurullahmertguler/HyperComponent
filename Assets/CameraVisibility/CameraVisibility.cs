@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraVisibility : MonoBehaviour
 {
     // Define the camera object
-    public Camera camera;
+    //Camera camera;
 
     // Define the MeshRenderer object of the object this script is running
     MeshRenderer meshRenderer;
